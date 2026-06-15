@@ -156,14 +156,14 @@ export default function CarDetails() {
   const emiValue = calculateEstimatedEmi(carData.discountedPrice);
 
   return (
-    <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10">
       <div className="space-y-6 lg:w-3/5">
         <CarImageCarousel
           images={galleryImages}
           alt={`${carData.brand} ${carData.model}`}
         />
 
-        <Card >
+        <Card>
           <CardContent>
             <div className="mb-4 flex items-start justify-between gap-4">
               <div>

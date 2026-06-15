@@ -5,7 +5,7 @@ const CARD_SKELETON_COUNT = 6;
 
 export function ListingPageSkeleton() {
   return (
-    <div className="max-w-7xl mx-auto flex gap-4">
+    <div className="max-w-7xl mx-auto flex gap-4 px-4 py-10 sm:px-6">
       <Card className="min-w-75 shadow-md h-screen">
         <div className="space-y-6 p-6">
           <Skeleton className="h-7 w-32" />

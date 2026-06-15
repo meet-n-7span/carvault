@@ -5,7 +5,7 @@ const DETAIL_ITEM_COUNT = 12;
 
 export default function CarDetailSkeleton() {
   return (
-    <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col gap-10 lg:flex-row">
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 flex flex-col gap-10 lg:flex-row">
       <div className="space-y-6 lg:w-3/5">
         <div className="w-full">
           <Card className="overflow-hidden border border-slate-200 bg-white p-2 shadow-sm rounded-2xl">
