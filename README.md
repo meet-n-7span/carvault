@@ -119,4 +119,4 @@ src/
 
 
 ## Video
-[![Watch the video](https://loom.com)](/share/daeda27da2e044e4bb11f6316e3afa33)
+[![Watch the CarVault Walkthrough](https://loom.com)](https://www.loom.com/share/daeda27da2e044e4bb11f6316e3afa33)
