@@ -4,7 +4,9 @@ CarVault is a used car listing platform built as a frontend evaluation project. 
 
 The app is currently powered by static mock data and simulates API calls with delayed Promise-based helpers, which makes it easy to replace with a real backend later.
 
-[🚀 Live Demo](https://carvault-orpin.vercel.app/)
+
+🔗 Live Demo: [https://carvault-orpin.vercel.app/](https://carvault-orpin.vercel.app/)
+
 
 ## Features
 
