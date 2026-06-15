@@ -173,7 +173,7 @@ export default function CarsListing() {
   return (
     <>
       {isMobileFilterOpen ? (
-        <div className="fixed inset-0 z-40 xl:hidden">
+        <div className="fixed inset-0 z-40 xl:hidden px-4 py-10 sm:px-6">
           <button
             type="button"
             aria-label="Close filters"
@@ -216,7 +216,7 @@ export default function CarsListing() {
         </div>
       ) : null}
 
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 xl:flex-row xl:items-start">
+      <div className="mx-auto flex max-w-7xl px-4 py-10 sm:px-6 flex-col gap-4 xl:flex-row xl:items-start">
         <div className="hidden xl:block">
           <FilterAside
             priceValue={priceValue}
@@ -311,7 +311,10 @@ export default function CarsListing() {
             ) : (
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {visibleCars.map((car) => (
-                  <Card key={car.id} className="overflow-hidden p-0 shadow-md mx-1">
+                  <Card
+                    key={car.id}
+                    className="overflow-hidden p-0 shadow-md mx-1"
+                  >
                     <div className="relative">
                       <Badge
                         className={`absolute right-3 top-3 rounded-full shadow-sm ${getBadgeClassName(
@@ -324,6 +327,7 @@ export default function CarsListing() {
                         src={car.primaryImage}
                         alt={`${car.brand} ${car.model}`}
                         className="mx-auto h-44 w-full object-contain transition duration-300 hover:scale-110"
+                        loading="lazy"
                       />
                     </div>
 
@@ -355,7 +359,12 @@ export default function CarsListing() {
                         </p>
                       </div>
 
-                      <Button className="w-full" onClick={()=> navigate(`/cars/${car.slug}`) }>View Details</Button>
+                      <Button
+                        className="w-full"
+                        onClick={() => navigate(`/cars/${car.slug}`)}
+                      >
+                        View Details
+                      </Button>
                     </CardContent>
 
                     <CardFooter className="flex items-center gap-2 bg-slate-50 text-xs text-muted-foreground h-1">
