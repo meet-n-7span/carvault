@@ -35,7 +35,7 @@ export default function CarImageCarousel({ images = [], alt = "Car image" }) {
 
   if (galleryImages.length === 0) {
     return (
-      <div className="flex aspect-[4/3] w-full items-center justify-center rounded-[28px] bg-slate-100 text-sm text-slate-500 lg:max-w-[760px] xl:max-w-[820px]">
+      <div className="flex aspect-4/3 w-full items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-500 lg:max-w-190 xl:max-w-205">
         No images available
       </div>
     );
@@ -87,7 +87,7 @@ export default function CarImageCarousel({ images = [], alt = "Car image" }) {
             <img
               src={src}
               alt={`${alt} thumbnail ${index + 1}`}
-              className="h-14 w-20 rounded-xl object-cover sm:h-16 sm:w-24 lg:h-[72px] lg:w-[104px]"
+              className="h-14 w-20 rounded-xl object-cover sm:h-16 sm:w-24 lg:h-18 lg:w-26"
             />
           </button>
         ))}

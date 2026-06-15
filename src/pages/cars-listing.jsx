@@ -118,7 +118,6 @@ export default function CarsListing() {
   }, [listingResponse]);
 
   useEffect(() => {
-
     setSearchValue("");
   }, [
     priceValue,
