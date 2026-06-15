@@ -311,7 +311,7 @@ export default function CarsListing() {
             ) : (
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {visibleCars.map((car) => (
-                  <Card key={car.id} className="mx-0 overflow-hidden p-0 shadow-md mx-1">
+                  <Card key={car.id} className="overflow-hidden p-0 shadow-md mx-1">
                     <div className="relative">
                       <Badge
                         className={`absolute right-3 top-3 rounded-full shadow-sm ${getBadgeClassName(
@@ -327,7 +327,7 @@ export default function CarsListing() {
                       />
                     </div>
 
-                    <CardContent className="space-y-3 p-4 sm:p-6">
+                    <CardContent className="space-y-3">
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900">
                           {car.brand} {car.model}
@@ -358,7 +358,7 @@ export default function CarsListing() {
                       <Button className="w-full" onClick={()=> navigate(`/cars/${car.slug}`) }>View Details</Button>
                     </CardContent>
 
-                    <CardFooter className="flex min-h-12 items-center gap-2 bg-slate-50 px-4 py-3 text-xs text-muted-foreground sm:px-6">
+                    <CardFooter className="flex items-center gap-2 bg-slate-50 text-xs text-muted-foreground h-1">
                       <MapPin className="h-3 w-3 shrink-0" />
                       <span className="truncate">
                         {car.city}, {car.state}
