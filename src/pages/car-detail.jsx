@@ -188,7 +188,7 @@ export default function CarDetails() {
                     key={item.label}
                     className="flex items-start gap-4 py-4 sm:px-5 lg:min-h-28 lg:px-6"
                   >
-                    <div className="rounded-2xl bg-orange-50 p-3 text-orange-500">
+                    <div className="rounded-2xl bg-emerald-50 p-3 text-emerald-500">
                       <Icon className="size-5" />
                     </div>
                     <div>
@@ -235,7 +235,7 @@ export default function CarDetails() {
             </div>
 
             <div className="mt-4 flex items-start gap-3 rounded-xl bg-orange-50 px-4 py-2 text-slate-800">
-              <MapPin className="mt-0.5 size-5 shrink-0 text-orange-500" />
+              <MapPin className="mt-0.5 size-5 shrink-0 text-red-500" />
               <p className="text-sm leading-6">
                 {carData.location.locality}, {carData.location.city},{" "}
                 {carData.location.state}
@@ -263,7 +263,7 @@ export default function CarDetails() {
               </div>
             </Card>
 
-            <div className="mt-4 rounded-2xl border border-dashed border-orange-200 bg-orange-50/60 px-4 py-4">
+            <div className="mt-4 rounded-2xl border border-dashed border-emerald-200 bg-emerald-50/60 px-4 py-4">
               <p className="text-sm text-slate-500">On-road estimate</p>
               <p className="mt-1 text-xl font-semibold text-slate-950">
                 {formatCurrency(carData.discountedPrice + 35474)}
