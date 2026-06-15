@@ -765,31 +765,7 @@ function matchesSearch(car, searchValue) {
   );
 }
 
-function getRelevanceScore(car, searchValue) {
-  const normalizedSearch = normalizeSearchValue(searchValue);
-
-  if (!normalizedSearch) {
-    return 0;
-  }
-
-  const exactMatches = [car.brand, car.model, car.location.city].filter(
-    (field) => String(field).toLowerCase() === normalizedSearch,
-  ).length;
-
-  const partialMatches = [
-    car.brand,
-    car.model,
-    car.variant,
-    car.location.city,
-    car.badge,
-  ].filter((field) =>
-    String(field).toLowerCase().includes(normalizedSearch),
-  ).length;
-
-  return exactMatches * 10 + partialMatches;
-}
-
-function sortCars(cars, sortBy, searchValue) {
+function sortCars(cars, sortBy) {
   const sortableCars = [...cars];
 
   switch (sortBy) {
@@ -817,19 +793,9 @@ function sortCars(cars, sortBy, searchValue) {
       return sortableCars.sort(
         (firstCar, secondCar) => firstCar.kmDriven - secondCar.kmDriven,
       );
-    case "Relevance":
+    case "All":
     default:
-      return sortableCars.sort((firstCar, secondCar) => {
-        const scoreDifference =
-          getRelevanceScore(secondCar, searchValue) -
-          getRelevanceScore(firstCar, searchValue);
-
-        if (scoreDifference !== 0) {
-          return scoreDifference;
-        }
-
-        return secondCar.registrationYear - firstCar.registrationYear;
-      });
+      return sortableCars;
   }
 }
 
@@ -861,7 +827,7 @@ function buildCarsListingResponse({
   selectedTransmissions = [],
   selectedBodyTypes = [],
   selectedOwnerships = [],
-  sortBy = "Relevance",
+  sortBy = "All",
 } = {}) {
   const filteredCars = carsData.filter((car) => {
     const matchesPrice =
@@ -885,7 +851,7 @@ function buildCarsListingResponse({
     );
   });
 
-  const sortedCars = sortCars(filteredCars, sortBy, searchValue);
+  const sortedCars = sortCars(filteredCars, sortBy);
   const listingCars = sortedCars.map(mapCarToListingCard);
 
   return {
