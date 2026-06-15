@@ -116,3 +116,7 @@ src/
 - `lucide-react` for icons
 - `embla-carousel-react` for the detail page image carousel
 - `react-infinite-scroll-component` for infinite scroll on the listing page
+
+
+## Video
+[![Watch the video](https://loom.com)](/share/daeda27da2e044e4bb11f6316e3afa33)
